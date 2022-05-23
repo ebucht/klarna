@@ -2,6 +2,7 @@
 require('dotenv').config();
 
 // Import Express and initialize Express Server Application
+const PORT = process.env.PORT || 3000;
 const express = require('express');
 const app = express();
 
@@ -17,8 +18,8 @@ app.use(require('./routes'));
 /**
  * 	Start Express Server Application
  **/
-app.listen(process.env.PORT, function () {
-	console.log(`App listening on port ${process.env.PORT}`);
+app.listen(PORT, function () {
+	console.log(`App listening on port ${PORT}`);
 });
 
 module.exports = app;
