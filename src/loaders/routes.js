@@ -6,6 +6,7 @@ const app = express();
  **/
 // Client Route Code
 const index = require('../routes/client/index');
+const landingPage = require('../routes/client/landingPage');
 const confirmation = require('../routes/client/confirmation');
 const cartCheckout = require('../routes/client/cartCheckout');
 
@@ -21,7 +22,8 @@ const serviceUnavailable = require('../routes/both/500.js');
  * 	Set URLS for our Routes
  **/
 // Set Client Route URLS
-app.use('/', index);
+app.use('/', landingPage);
+app.use('/checkout', index);
 app.use('/confirmation', confirmation);
 app.use('/cart-checkout', cartCheckout);
 // Set Server Route URLS
