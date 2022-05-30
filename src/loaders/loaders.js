@@ -17,6 +17,8 @@ app.use(require('./routes'));
 /**
  * 	Start Express Server Application
  **/
-app.listen(process.env.PORT);
+app.listen(process.env.PORT, function () {
+	console.log(`App listening on port ${process.env.PORT}`);
+});
 
 module.exports = app;
